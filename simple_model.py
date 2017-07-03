@@ -30,7 +30,7 @@ lentrain = len(traindata)
 
 print("fitting pipeline... ")
 
-tfv.fit(X_all))
+tfv.fit(X_all)
 X_all = tfv.transform(X_all)
 
 X = X_all[:lentrain]
