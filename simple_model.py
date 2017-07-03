@@ -18,7 +18,9 @@ for i in range( 0, len(train["review"])):
 testdata = []
 for i in range(0,len(test["review"])):
     testdata.append(" ".join(KaggleWord2VecUtility.review_to_wordlist(test["review"][i], False)))
-print('vectorizing... ',)
+
+print('vectorizing... ')
+
 tfv = TfidfVectorizer(min_df=3,  max_features=None, 
         strip_accents='unicode', analyzer='word',token_pattern=r'\w{1,}',
         ngram_range=(1, 2), use_idf=1,smooth_idf=1,sublinear_tf=1,
@@ -26,7 +28,9 @@ tfv = TfidfVectorizer(min_df=3,  max_features=None,
 X_all = traindata + testdata
 lentrain = len(traindata)
 
-print("fitting pipeline... ", tfv.fit(X_all))
+print("fitting pipeline... ")
+
+tfv.fit(X_all))
 X_all = tfv.transform(X_all)
 
 X = X_all[:lentrain]
